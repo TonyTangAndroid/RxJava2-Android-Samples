@@ -1,5 +1,8 @@
 package com.rxjava2.android.samples.utils;
 
+import android.util.Log;
+
+import com.androidnetworking.error.ANError;
 import com.rxjava2.android.samples.model.ApiUser;
 import com.rxjava2.android.samples.model.User;
 
@@ -11,23 +14,27 @@ import java.util.List;
  */
 public class Utils {
 
+    private Utils() {
+        // This class in not publicly instantiable.
+    }
+
     public static List<User> getUserList() {
 
         List<User> userList = new ArrayList<>();
 
         User userOne = new User();
-        userOne.firstName = "Amit";
-        userOne.lastName = "Shekhar";
+        userOne.firstname = "Amit";
+        userOne.lastname = "Shekhar";
         userList.add(userOne);
 
         User userTwo = new User();
-        userTwo.firstName = "Manish";
-        userTwo.lastName = "Kumar";
+        userTwo.firstname = "Manish";
+        userTwo.lastname = "Kumar";
         userList.add(userTwo);
 
         User userThree = new User();
-        userThree.firstName = "Sumit";
-        userThree.lastName = "Kumar";
+        userThree.firstname = "Sumit";
+        userThree.lastname = "Kumar";
         userList.add(userThree);
 
         return userList;
@@ -38,18 +45,18 @@ public class Utils {
         List<ApiUser> apiUserList = new ArrayList<>();
 
         ApiUser apiUserOne = new ApiUser();
-        apiUserOne.firstName = "Amit";
-        apiUserOne.lastName = "Shekhar";
+        apiUserOne.firstname = "Amit";
+        apiUserOne.lastname = "Shekhar";
         apiUserList.add(apiUserOne);
 
         ApiUser apiUserTwo = new ApiUser();
-        apiUserTwo.firstName = "Manish";
-        apiUserTwo.lastName = "Kumar";
+        apiUserTwo.firstname = "Manish";
+        apiUserTwo.lastname = "Kumar";
         apiUserList.add(apiUserTwo);
 
         ApiUser apiUserThree = new ApiUser();
-        apiUserThree.firstName = "Sumit";
-        apiUserThree.lastName = "Kumar";
+        apiUserThree.firstname = "Sumit";
+        apiUserThree.lastname = "Kumar";
         apiUserList.add(apiUserThree);
 
         return apiUserList;
@@ -61,8 +68,8 @@ public class Utils {
 
         for (ApiUser apiUser : apiUserList) {
             User user = new User();
-            user.firstName = apiUser.firstName;
-            user.lastName = apiUser.lastName;
+            user.firstname = apiUser.firstname;
+            user.lastname = apiUser.lastname;
             userList.add(user);
         }
 
@@ -75,14 +82,14 @@ public class Utils {
 
         User userOne = new User();
         userOne.id = 1;
-        userOne.firstName = "Amit";
-        userOne.lastName = "Shekhar";
+        userOne.firstname = "Amit";
+        userOne.lastname = "Shekhar";
         userList.add(userOne);
 
         User userTwo = new User();
         userTwo.id = 2;
-        userTwo.firstName = "Manish";
-        userTwo.lastName = "Kumar";
+        userTwo.firstname = "Manish";
+        userTwo.lastname = "Kumar";
         userList.add(userTwo);
 
         return userList;
@@ -95,14 +102,14 @@ public class Utils {
 
         User userOne = new User();
         userOne.id = 1;
-        userOne.firstName = "Amit";
-        userOne.lastName = "Shekhar";
+        userOne.firstname = "Amit";
+        userOne.lastname = "Shekhar";
         userList.add(userOne);
 
         User userTwo = new User();
         userTwo.id = 3;
-        userTwo.firstName = "Sumit";
-        userTwo.lastName = "Kumar";
+        userTwo.firstname = "Sumit";
+        userTwo.lastname = "Kumar";
         userList.add(userTwo);
 
         return userList;
@@ -120,4 +127,25 @@ public class Utils {
         }
         return userWhoLovesBoth;
     }
+
+    public static void logError(String TAG, Throwable e) {
+        if (e instanceof ANError) {
+            ANError anError = (ANError) e;
+            if (anError.getErrorCode() != 0) {
+                // received ANError from server
+                // error.getErrorCode() - the ANError code from server
+                // error.getErrorBody() - the ANError body from server
+                // error.getErrorDetail() - just a ANError detail
+                Log.d(TAG, "onError errorCode : " + anError.getErrorCode());
+                Log.d(TAG, "onError errorBody : " + anError.getErrorBody());
+                Log.d(TAG, "onError errorDetail : " + anError.getErrorDetail());
+            } else {
+                // error.getErrorDetail() : connectionError, parseError, requestCancelledError
+                Log.d(TAG, "onError errorDetail : " + anError.getErrorDetail());
+            }
+        } else {
+            Log.d(TAG, "onError errorMessage : " + e.getMessage());
+        }
+    }
+
 }
