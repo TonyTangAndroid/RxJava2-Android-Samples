@@ -22,9 +22,9 @@ import io.reactivex.schedulers.Schedulers;
 public class RxBusActivity extends AppCompatActivity {
 
     public static final String TAG = RxBusActivity.class.getSimpleName();
+    private final CompositeDisposable disposables = new CompositeDisposable();
     TextView textView;
     Button button;
-    private final CompositeDisposable disposables = new CompositeDisposable();
 
     @Override
     protected void onDestroy() {
@@ -64,7 +64,6 @@ public class RxBusActivity extends AppCompatActivity {
             }
         });
     }
-
 
 
 }

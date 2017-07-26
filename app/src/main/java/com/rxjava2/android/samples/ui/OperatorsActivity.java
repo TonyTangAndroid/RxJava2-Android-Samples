@@ -146,7 +146,7 @@ public class OperatorsActivity extends AppCompatActivity {
     }
 
     public void startThrottleFirstActivity(View view) {
-        startActivity(new Intent(OperatorsActivity.this,ThrottleFirstExampleActivity.class));
+        startActivity(new Intent(OperatorsActivity.this, ThrottleFirstExampleActivity.class));
     }
 
     public void startThrottleLastActivity(View view) {
@@ -158,11 +158,11 @@ public class OperatorsActivity extends AppCompatActivity {
     }
 
     public void startWindowActivity(View view) {
-        startActivity(new Intent(OperatorsActivity.this,WindowExampleActivity.class));
+        startActivity(new Intent(OperatorsActivity.this, WindowExampleActivity.class));
     }
 
     public void startDelayActivity(View view) {
-        startActivity(new Intent(OperatorsActivity.this,DelayExampleActivity.class));
+        startActivity(new Intent(OperatorsActivity.this, DelayExampleActivity.class));
     }
 
 }

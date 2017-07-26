@@ -26,9 +26,20 @@ import io.reactivex.schedulers.Schedulers;
 public class DisposableExampleActivity extends AppCompatActivity {
 
     private static final String TAG = DisposableExampleActivity.class.getSimpleName();
+    private final CompositeDisposable disposables = new CompositeDisposable();
     Button btn;
     TextView textView;
-    private final CompositeDisposable disposables = new CompositeDisposable();
+
+    static Observable<String> sampleObservable() {
+        return Observable.defer(new Callable<ObservableSource<? extends String>>() {
+            @Override
+            public ObservableSource<? extends String> call() throws Exception {
+                // Do some long running operation
+                SystemClock.sleep(2000);
+                return Observable.just("one", "two", "three", "four", "five");
+            }
+        });
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,16 +94,5 @@ public class DisposableExampleActivity extends AppCompatActivity {
                         Log.d(TAG, " onNext value : " + value);
                     }
                 }));
-    }
-
-    static Observable<String> sampleObservable() {
-        return Observable.defer(new Callable<ObservableSource<? extends String>>() {
-            @Override
-            public ObservableSource<? extends String> call() throws Exception {
-                // Do some long running operation
-                SystemClock.sleep(2000);
-                return Observable.just("one", "two", "three", "four", "five");
-            }
-        });
     }
 }

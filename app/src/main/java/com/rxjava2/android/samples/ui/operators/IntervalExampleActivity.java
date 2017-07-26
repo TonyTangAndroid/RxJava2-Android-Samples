@@ -24,9 +24,9 @@ import io.reactivex.schedulers.Schedulers;
 public class IntervalExampleActivity extends AppCompatActivity {
 
     private static final String TAG = IntervalExampleActivity.class.getSimpleName();
+    private final CompositeDisposable disposables = new CompositeDisposable();
     Button btn;
     TextView textView;
-    private final CompositeDisposable disposables = new CompositeDisposable();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

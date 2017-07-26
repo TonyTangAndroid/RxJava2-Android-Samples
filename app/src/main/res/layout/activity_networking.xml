@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.rxjava2.android.samples.ui.networking.NetworkingActivity">
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.rxjava2.android.samples.ui.networking.NetworkingActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,7 +20,7 @@
             android:layout_height="48dp"
             android:layout_margin="8dp"
             android:onClick="map"
-            android:text="@string/map" />
+            android:text="@string/map"/>
 
         <Button
             android:id="@+id/zip"
@@ -28,7 +28,7 @@
             android:layout_height="48dp"
             android:layout_margin="8dp"
             android:onClick="zip"
-            android:text="@string/zip" />
+            android:text="@string/zip"/>
 
         <Button
             android:id="@+id/flatMapAndFilter"
@@ -36,7 +36,7 @@
             android:layout_height="48dp"
             android:layout_margin="8dp"
             android:onClick="flatMapAndFilter"
-            android:text="@string/flatMapAndFilter" />
+            android:text="@string/flatMapAndFilter"/>
 
         <Button
             android:id="@+id/take"
@@ -44,7 +44,7 @@
             android:layout_height="48dp"
             android:layout_margin="8dp"
             android:onClick="take"
-            android:text="@string/take" />
+            android:text="@string/take"/>
 
         <Button
             android:id="@+id/flatMap"
@@ -52,7 +52,7 @@
             android:layout_height="48dp"
             android:layout_margin="8dp"
             android:onClick="flatMap"
-            android:text="@string/flatMap" />
+            android:text="@string/flatMap"/>
 
         <Button
             android:id="@+id/flatMapWithZip"
@@ -60,7 +60,7 @@
             android:layout_height="48dp"
             android:layout_margin="8dp"
             android:onClick="flatMapWithZip"
-            android:text="@string/flatMapWithZip" />
+            android:text="@string/flatMapWithZip"/>
 
     </LinearLayout>
 </ScrollView>

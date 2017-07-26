@@ -31,6 +31,7 @@ import io.reactivex.processors.PublishProcessor;
 public class PaginationActivity extends AppCompatActivity {
 
     public static final String TAG = PaginationActivity.class.getSimpleName();
+    private final int VISIBLE_THRESHOLD = 1;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
     private PublishProcessor<Integer> paginator = PublishProcessor.create();
     private PaginationAdapter paginationAdapter;
@@ -38,7 +39,6 @@ public class PaginationActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private boolean loading = false;
     private int pageNumber = 1;
-    private final int VISIBLE_THRESHOLD = 1;
     private int lastVisibleItem, totalItemCount;
     private LinearLayoutManager layoutManager;
 
