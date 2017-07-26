@@ -3,12 +3,13 @@
 # Learning RxJava 2 for Android by example
 
 [![Mindorks](https://img.shields.io/badge/mindorks-opensource-blue.svg)](https://mindorks.com/open-source-projects)
+[![Mindorks Community](https://img.shields.io/badge/join-community-blue.svg)](https://mindorks.com/join-community)
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-RxJava2%20Android%20Samples-blue.svg?style=flat)](https://android-arsenal.com/details/3/4314)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/Apache-2.0)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/amitshekhariitbhu/RxJava2-Android-Samples/blob/master/LICENSE)
 
 ## How to use RxJava 2 in Android Application
-## How to migrate from RxJava 1 to RxJava 2
+## How to migrate from RxJava 1.0 to RxJava 2.0
 
 ### This project is for : 
 * who is migrating to RxJava 2 
@@ -21,7 +22,7 @@ RxJava 2.0 has been completely rewritten from scratch on top of the Reactive-Str
 Because Reactive-Streams has a different architecture, it mandates changes to some well known RxJava types.
 
 
-# Migration From RxJava 1 to RxJava 2
+# Migration From RxJava 1.0 to RxJava 2.0
 
 To allow having RxJava 1 and RxJava 2 side-by-side, RxJava 2 is under the maven coordinates 
 io.reactivex.rxjava2:rxjava:2.x.y and classes are accessible below io.reactivex.
@@ -101,6 +102,7 @@ RxJava1 -> RxJava2
 * [IntervalExampleActivity](https://github.com/amitshekhariitbhu/RxJava2-Android-Samples/blob/master/app/src/main/java/com/rxjava2/android/samples/ui/operators/IntervalExampleActivity.java) - Using `Interval`
 * [RxBusActivity](https://github.com/amitshekhariitbhu/RxJava2-Android-Samples/blob/master/app/src/main/java/com/rxjava2/android/samples/ui/rxbus/RxBusActivity.java) - RxBus, RxJava2Bus, EventBus, RxEventBus
 * [PaginationActivity](https://github.com/amitshekhariitbhu/RxJava2-Android-Samples/blob/master/app/src/main/java/com/rxjava2/android/samples/ui/pagination/PaginationActivity.java) - Pagination for loadMore in RecyclerView
+* [ComposeOperatorExampleActivity](https://github.com/amitshekhariitbhu/RxJava2-Android-Samples/blob/master/app/src/main/java/com/rxjava2/android/samples/ui/compose/ComposeOperatorExampleActivity.java) - Compose operator for reusable
 
 ### TODO 
 
@@ -118,7 +120,7 @@ RxJava1 -> RxJava2
 ### Another awesome library for debugging databases and shared preferences.
 * [Android Debug Database](https://github.com/amitshekhariitbhu/Android-Debug-Database)
 
-###[Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
+### [Check out Mindorks awesome open source projects here](https://mindorks.com/open-source-projects)
 
 ### Contact - Let's become friend
 - [Twitter](https://twitter.com/amitiitbhu)
